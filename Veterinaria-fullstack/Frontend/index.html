@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Veterinaria</a>
+    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Mascotas<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="veterinarios.html">Veterinarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="consultas.html">Consultas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="duenos.html">Dueños</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h2>Mascotas</h2>
+
+        <div class="menu_acciones d-flex justify-content-end">
+            <button type="button" id="btn-nuevo" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Nuevo</button>
+        </div>
+        <table class="table table-stripped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Dueño</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+
+            <tbody id="lista_mascotas"></tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nueva mascota</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="form">
+                        <input type="hidden" id="indice">
+                        <div class="form-row">
+                            <div class="col">
+                                <select id="tipo" class="form-control" required>
+                                    <option disabled selected>Tipo Animal</option>
+                                    <option>Perro</option>
+                                    <option>Gato</option>
+                                    <option>Pájaro</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input id="nombre" type="text" class="form-control" placeholder="Nombre de la mascota" required>
+                            </div>
+
+                            <div class="col">
+                                <select id="dueño" class="form-control" required>
+                                    <option disabled selected>Nombre del dueño</option>
+                                    <option>Mario</option>
+                                    <option>Esteban</option>
+                                    <option>Carlos</option>
+                                    <option>Juan</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrar">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="guardar">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mascotas.js"></script>
+</html>
